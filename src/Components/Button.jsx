@@ -1,14 +1,15 @@
 import React from "react";
 import { buttonStyle } from "../Stylle/style";
-const Button = (props) => {
-  const { text, handleOnClick, ownStyle, ...rest } = props;
+
+const Button = ({ type, text, onClick, style, ...rest }) => {
   return (
     <button
+      type={type}
+      onClick={onClick}
       style={{
         ...buttonStyle,
-        ...ownStyle,
+        ...style,
       }}
-      onClick={handleOnClick}
       {...rest}
     >
       {text}
